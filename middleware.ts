@@ -3,7 +3,7 @@ import { draftMode } from 'next/headers'
 
 export async function middleware(req: NextRequest) {
 
-  const isDraftMode = draftMode().isEnabled
+  const isDraftMode = draftMode()?.isEnabled
 
   console.log('draftMode().isEnabled from middleware:', isDraftMode)
 

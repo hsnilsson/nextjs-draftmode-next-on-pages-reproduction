@@ -3,9 +3,11 @@ import { draftMode } from 'next/headers'
 
 export async function middleware(req: NextRequest) {
 
-  const isDraftMode = draftMode()?.isEnabled
+  const { isEnabled } = draftMode()
 
-  console.log('draftMode().isEnabled from middleware:', isDraftMode)
+  // This should return `true` when draft mode enabled
+  // but always returns false.
+  console.log('draftMode().isEnabled from middleware:', isEnabled)
 
   // Request is allowed, return response
   return NextResponse.next()

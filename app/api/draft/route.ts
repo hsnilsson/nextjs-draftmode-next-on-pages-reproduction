@@ -4,6 +4,9 @@ import { redirect } from 'next/navigation'
  
 // Preview URL: localhost:3000/api/draft?secret=secret-token&slug=preview-page 
 
+// Specify the Edge Runtime
+export const runtime = "edge";
+
 export async function GET(request: Request) {
   // Parse query string parameters
   const { searchParams } = new URL(request.url)
